@@ -24,7 +24,7 @@ chatForm.addEventListener("submit", async (e) => {
     userInput.value = "";
 
     try {
-        const response = await axios.post("/ask", { question: userText });
+        const response = await axios.post("/ask", { message: userText });  // Utiliser "message" au lieu de "question"
         addMessage(response.data.response, "bot");
     } catch (error) {
         addMessage("Une erreur est survenue. Réessayez.", "bot");

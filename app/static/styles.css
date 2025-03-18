@@ -1,41 +1,46 @@
+/* Général */
 body {
     font-family: 'Arial', sans-serif;
     background-color: #f5f7fa;
     display: flex;
     flex-direction: column;
-    justify-content: space-between; /* Changer en space-between */
     align-items: center;
-    height: 100vh;
-    margin: 0; /* Supprimer les marges */
+    min-height: 100vh;
+    margin: 0;
 }
 
+/* Header */
 .main-header {
     background-color: #007bff;
+
     color: white;
+    text-align: center;
+    width: 100%;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+/* Main Content */
+.main-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex-grow: 1;
+    width: 100%;
     padding: 20px;
-    text-align: center;
-    width: 100%;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
 }
 
-.main-footer {
-    background-color: #007bff;
-    color: white;
-    padding: 10px;
-    text-align: center;
-    width: 100%;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
-}
-
+/* Chat Container */
 .chat-container {
     background-color: #fff;
-    width: 400px;
+    width: 800px;
+    height: 500px;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0,0,0,0.1);
     display: flex;
     flex-direction: column;
     overflow: hidden;
-    margin-top: 20px; /* Ajouter une marge en haut */
+    margin-top: 10px;
 }
 
 .chat-header {
@@ -52,6 +57,7 @@ body {
     border-bottom: 1px solid #ddd;
 }
 
+/* Messages */
 .message {
     margin-bottom: 15px;
     display: flex;
@@ -75,6 +81,7 @@ body {
     max-width: 70%;
 }
 
+/* Chat Form */
 .chat-form {
     display: flex;
 }
@@ -98,11 +105,13 @@ button:hover {
     background-color: #0056b3;
 }
 
+/* Info Container */
 .info-container {
     background-color: #fff;
-    width: 400px;
+    width: 600px;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    margin-top: 50px;
     padding: 20px;
 }
 
@@ -117,4 +126,14 @@ button:hover {
 
 .info-container li {
     margin-bottom: 10px;
+}
+
+/* Footer */
+.main-footer {
+    background-color: #007bff;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    width: 100%;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
 }
