@@ -48,8 +48,8 @@ class QuestionRequest(BaseModel):
 async def get_index():
     """ Servir la page index.html """
     try:
-        with open(os.path.join("templates", "index.html")) as f:
-            return f.read()
+        with open(os.path.join("templates", "index.html"), encoding="utf-8") as f:
+            return HTMLResponse(content=f.read(), status_code=200)
     except FileNotFoundError:
         raise HTTPException(status_code=404, detail="Page index.html non trouvée.")
 
@@ -61,7 +61,7 @@ def ask_mistral(request: QuestionRequest):
         print(f"Question reçue : {question_lower}")
 
         # Extraction de l'ID d'équipement via regex
-        match = re.search(r'id\s*:\s*([a-zA-Z0-9\s]+)', question_lower)
+        match = re.search(r'\bID\s*[:=\s]+\s*([\w-]+)\b', question_lower)
         if match:
             equipment_id = match.group(1).strip()
             print(f"ID d'équipement extrait : {equipment_id}")
@@ -115,7 +115,7 @@ def ask_mistral(request: QuestionRequest):
                 print(f"Réponse Mistral AI : {response_json}")
 
                 if "choices" in response_json and len(response_json["choices"]) > 0:
-                    return {"response": response_json["choices"][0]["message"]["content"]}
+                    return {"response": response_json["choices"][0]["message"]["content"].encode("utf-8").decode("utf-8")}
                 else:
                     raise HTTPException(status_code=500, detail="Réponse invalide de Mistral AI.")
             else:

@@ -2,9 +2,29 @@ body {
     font-family: 'Arial', sans-serif;
     background-color: #f5f7fa;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    justify-content: space-between; /* Changer en space-between */
     align-items: center;
     height: 100vh;
+    margin: 0; /* Supprimer les marges */
+}
+
+.main-header {
+    background-color: #007bff;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    width: 100%;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.main-footer {
+    background-color: #007bff;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    width: 100%;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
 }
 
 .chat-container {
@@ -15,6 +35,7 @@ body {
     display: flex;
     flex-direction: column;
     overflow: hidden;
+    margin-top: 20px; /* Ajouter une marge en haut */
 }
 
 .chat-header {
@@ -75,4 +96,25 @@ button {
 
 button:hover {
     background-color: #0056b3;
+}
+
+.info-container {
+    background-color: #fff;
+    width: 400px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    padding: 20px;
+}
+
+.info-container h3 {
+    margin-top: 0;
+    color: #007bff;
+}
+
+.info-container ul {
+    padding-left: 20px;
+}
+
+.info-container li {
+    margin-bottom: 10px;
 }
